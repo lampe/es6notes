@@ -11,7 +11,7 @@ var evens = [1,2,3,4];
 var odds = evens.map(function (v) {
   return v + 1;
 });
-console.log(odds);
+console.log(odds);                // [2, 3, 4, 5]
 ```
 
 #### es6 syntax
@@ -19,7 +19,8 @@ console.log(odds);
 ```javascript
 let evens = [1,2,3,4];
 let odds = evens.map(v => v + 1);
-console.log(odds);
+console.log(odds);                // [2, 3, 4, 5]
+undefined
 ```
 
 ### pseudo code
@@ -37,7 +38,7 @@ var nums = [1,2,3,4,5,6,7,8,9,10,15,20];
 nums.forEach(function (v) {
   if (v % 5 === 0) fives.push(v);
 });
-console.log(fives);
+console.log(fives);                     // [5, 10, 15, 20]
 ```
 
 #### es6 syntax
@@ -49,7 +50,7 @@ nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
 });
-console.log(fives);
+console.log(fives);                     // [5, 10, 15, 20]
 ```
 
 ### example3
@@ -61,11 +62,11 @@ var bob = {
   _friends: ['maxi', 'dimi'],
   printFriends: function printFriends() {
     this._friends.forEach(function (f) {
-      console.log(this);                          # returns the window object
-      console.log(this._name + " knows " + f);    # retruns undefined knows maxi
+      console.log(this);                          // returns the window object
+      console.log(this._name + " knows " + f);    // retruns undefined knows maxi
       (function () {
-        console.log(this, 'inner function');      # returns the window object
-        console.log(this._name + " knows " + f);  # returns undefined knows dimi
+        console.log(this, 'inner function');      // returns the window object
+        console.log(this._name + " knows " + f);  // returns undefined knows dimi
       })();
     });
   }
@@ -81,11 +82,11 @@ let bob = {
   _friends: ['maxi', 'dimi'],
   printFriends() {
     this._friends.forEach(f => {
-      console.log(this);                          # returns the bob object
-      console.log(this._name + " knows " + f);    # returns micha know maxi
+      console.log(this);                          // returns the bob object
+      console.log(this._name + " knows " + f);    // returns micha know maxi
       (() => {
-        console.log(this, 'inner function');      # returns the bob object
-        console.log(this._name + " knows " + f);  # returns micha know maxi
+        console.log(this, 'inner function');      // returns the bob object
+        console.log(this._name + " knows " + f);  // returns micha know maxi
       })()
     });
   }
