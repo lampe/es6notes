@@ -1,8 +1,7 @@
 ## Arrow functions
 - Arrow functions are always anonymous
-- lexically binds the this value (does not bind its own this, arguments, super, or new.target)
-- You Can’t Override An Arrow Function’s “this”
-
+- Lexically binds the this value (does not bind its own this, arguments, super, or new.target)
+- You can’t override an arrow function’s “this”
 
 ### example1
 #### es5 syntax
@@ -61,7 +60,6 @@ var bob = {
   _name: "micha",
   _friends: ['maxi', 'dimi'],
   printFriends: function printFriends() {
-    // var _this = this;
     this._friends.forEach(function (f) {
       console.log(this);                          # returns the window object
       console.log(this._name + " knows " + f);    # retruns undefined knows maxi
@@ -78,7 +76,7 @@ bob.printFriends();
 
 #### es6 syntax
 ```javascript
-var bob = {
+let bob = {
   _name: "micha",
   _friends: ['maxi', 'dimi'],
   printFriends() {
