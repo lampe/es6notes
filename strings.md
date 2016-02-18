@@ -1,4 +1,4 @@
-## Strings
+## Object literalsObject literals
 
 ```javascript
 // Basic literal string creation

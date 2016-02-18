@@ -20,7 +20,6 @@ console.log(odds);                // [2, 3, 4, 5]
 let evens = [1,2,3,4];
 let odds = evens.map(v => v + 1);
 console.log(odds);                // [2, 3, 4, 5]
-undefined
 ```
 
 ### pseudo code
